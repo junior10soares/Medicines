@@ -1,30 +1,54 @@
-# React + TypeScript + Vite
+# Descrição da Pull Request
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Desafio
 
-Currently, two official plugins are available:
+Olá! Nesta PR, estou enviando minha solução para o teste de desenvolvedor frontend Jr. da Dotlib. Desenvolvi uma aplicação em React para um bulário eletrônico, que permite consultar e visualizar bulas de medicamentos.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Funcionalidades Implementadas
 
-## Expanding the ESLint configuration
+- Consulta por nome do medicamento ou laboratório farmacêutico.
+- Listagem dos resultados da consulta.
+- Ordenação pela data de publicação do medicamento.
+- Paginação de 10 em 10 itens por página.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## API Utilizada
+- `/data`: retorna todos os items paginados de 10 em 10.
+- `/data/:id`: retorna um medicamento consultado pelo id.
+- `/data?_page=:number`: retorna os items paginados.
 
-- Configure the top-level `parserOptions` property like this:
+## Dicionário de Dados
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Forneço abaixo um resumo dos campos utilizados na aplicação:
+- `id`: identificador do medicamento.
+- `name`: nome do medicamento.
+- `published_at`: data de publicação.
+- `company`: nome do laboratório.
+- `documents.id`: identificador da bula profissional ou paciente.
+- `documents.expedient`: registro da bula em orgãos responsáveis.
+- `documents.type`: tipo da bula (PROFESSIONAL ou PATIENT).
+- `documents.url`: URL da bula.
+- `active_principles.id`: identificador do princípio ativo encontrado no medicamento.
+- `active_principles.name`: nome do princípio ativo encontrado no medicamento.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## O que foi analisado
+
+Ao desenvolver esta solução, levei em consideração os critérios de avaliação listados abaixo:
+- Tempo de entrega do teste.
+- Organização e legibilidade do código.
+- Padronização de commits.
+- Separação de componentes.
+- Sugestões de novas funcionalidades, como download do PDF da bula.
+
+## Versão web
+![Captura de tela de 2024-04-18 00-39-47](https://github.com/Dotlib-BR/teste-desenvolvedor-frontend/assets/113471068/9444c765-ede3-41f5-a25f-d9e27cb806ef)
+
+## Versão mobile
+![Captura de tela de 2024-04-18 00-40-22](https://github.com/Dotlib-BR/teste-desenvolvedor-frontend/assets/113471068/52141909-66ee-4533-a66f-4268f4260032)
+
+## Deploy
+O site do teste está acessível para qualquer pessoa [aqui](https://medicines.vercel.app/).
+
+Aguardo feedbacks e estou à disposição para quaisquer esclarecimentos adicionais.
+
+Atenciosamente,
+Edson Martins Soares Junior
